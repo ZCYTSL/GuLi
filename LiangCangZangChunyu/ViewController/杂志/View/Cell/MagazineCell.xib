@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MagazineCell" customModule="LiangCangZangChunyu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oog-fZ-RuV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glo-ll-MRS">
+                        <rect key="frame" x="20" y="64" width="280" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTA-dF-pSW">
+                        <rect key="frame" x="100" y="68" width="120" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="11c-q2-GlW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="glo-ll-MRS" firstAttribute="centerX" secondItem="Oog-fZ-RuV" secondAttribute="centerX" id="0Sh-BD-auS"/>
+                    <constraint firstItem="Oog-fZ-RuV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5rY-nY-mKb"/>
+                    <constraint firstItem="glo-ll-MRS" firstAttribute="centerY" secondItem="Oog-fZ-RuV" secondAttribute="centerY" id="6NJ-OW-7M3"/>
+                    <constraint firstItem="glo-ll-MRS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Q7m-Nm-bh2"/>
+                    <constraint firstAttribute="trailing" secondItem="dTA-dF-pSW" secondAttribute="trailing" constant="100" id="SRt-ce-cN6"/>
+                    <constraint firstItem="dTA-dF-pSW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="100" id="Wsx-Sv-fsU"/>
+                    <constraint firstAttribute="trailing" secondItem="Oog-fZ-RuV" secondAttribute="trailing" id="jF3-8p-zkq"/>
+                    <constraint firstAttribute="bottom" secondItem="dTA-dF-pSW" secondAttribute="bottom" constant="60" id="oRl-H0-3Ah"/>
+                    <constraint firstAttribute="bottom" secondItem="Oog-fZ-RuV" secondAttribute="bottom" id="tOR-wc-An5"/>
+                    <constraint firstItem="dTA-dF-pSW" firstAttribute="centerX" secondItem="glo-ll-MRS" secondAttribute="centerX" id="tQ7-eN-6hi"/>
+                    <constraint firstItem="Oog-fZ-RuV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="uSa-3u-1VY"/>
+                    <constraint firstAttribute="trailing" secondItem="glo-ll-MRS" secondAttribute="trailing" constant="20" id="vSf-pD-ZuV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="backImage" destination="Oog-fZ-RuV" id="7Sf-DT-h43"/>
+                <outlet property="detailLabel" destination="glo-ll-MRS" id="i3k-U9-Qwh"/>
+                <outlet property="littelLabel" destination="dTA-dF-pSW" id="OWq-Me-Wup"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

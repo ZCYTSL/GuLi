@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="BrandViewCell" customModule="LiangCangZangChunyu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j4N-o5-eKo">
+                        <rect key="frame" x="7" y="10" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="ZDG-M4-hB6"/>
+                            <constraint firstAttribute="height" constant="60" id="z5t-et-AKp"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xx0-BT-c4b">
+                        <rect key="frame" x="87" y="27" width="193" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="Vta-h9-4Ag"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="导航箭头.png" translatesAutoresizingMaskIntoConstraints="NO" id="YkX-21-5ph">
+                        <rect key="frame" x="295" y="30" width="10" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Qc5-h5-QjL"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Xx0-BT-c4b" firstAttribute="centerY" secondItem="j4N-o5-eKo" secondAttribute="centerY" id="BYF-UK-8xH"/>
+                    <constraint firstItem="YkX-21-5ph" firstAttribute="centerY" secondItem="Xx0-BT-c4b" secondAttribute="centerY" id="LGm-LQ-fg2"/>
+                    <constraint firstAttribute="trailing" secondItem="Xx0-BT-c4b" secondAttribute="trailing" constant="40" id="Lbi-um-J77"/>
+                    <constraint firstAttribute="trailing" secondItem="YkX-21-5ph" secondAttribute="trailing" constant="15" id="LqO-MR-9jr"/>
+                    <constraint firstItem="j4N-o5-eKo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="7" id="iCN-GA-bSQ"/>
+                    <constraint firstItem="j4N-o5-eKo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="l3g-CI-LhW"/>
+                    <constraint firstItem="Xx0-BT-c4b" firstAttribute="leading" secondItem="j4N-o5-eKo" secondAttribute="trailing" constant="20" id="wQV-IQ-68h"/>
+                    <constraint firstItem="YkX-21-5ph" firstAttribute="leading" secondItem="Xx0-BT-c4b" secondAttribute="trailing" constant="15" id="zqY-2f-im6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="brandImageView" destination="j4N-o5-eKo" id="IoC-2e-a5S"/>
+                <outlet property="brandLabel" destination="Xx0-BT-c4b" id="TR5-NN-rOj"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="导航箭头.png" width="13" height="24"/>
+    </resources>
+</document>
