@@ -22,7 +22,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="ccu-MX-9JE"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -31,8 +31,8 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="fWY-JF-Zll"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
-                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="13"/>
+                        <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIZ-TG-Aqw">

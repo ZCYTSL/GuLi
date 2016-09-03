@@ -9,22 +9,25 @@
 import Foundation
 
 /**商店-专题*/
-class SpecialView: UICollectionViewCell,UITableViewDelegate, UITableViewDataSource {
+class SpecialView: UICollectionViewCell,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     weak var delegate:ShopDelegate?
     var page: NSInteger = 1
     var dataArray = NSMutableArray()
-    lazy var tableView: UITableView = {
-        let tv = UITableView.init(frame: CGRectMake(0, 0, SCREEN_W, SCREEN_H - 108 - 49), style: .Plain)
-        tv.delegate = self
-        tv.dataSource = self
-        self.contentView.addSubview(tv)
-        tv.registerNib(UINib.init(nibName: "SpecialViewCell", bundle: nil), forCellReuseIdentifier: "SpecialViewCell")
-        tv.footer = MJRefreshAutoNormalFooter.init(refreshingBlock: { 
+    
+    lazy var collectionView:UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .Vertical
+        let cv = UICollectionView.init(frame: CGRectMake(0, 0, SCREEN_W, SCREEN_H - 108 - 49), collectionViewLayout: layout)
+        cv.delegate = self
+        cv.dataSource = self
+        cv.registerNib(UINib.init(nibName: "SpeciallCell", bundle: nil), forCellWithReuseIdentifier: "SpeciallCell")
+        self.contentView.addSubview(cv)
+        cv.footer = MJRefreshAutoNormalFooter.init(refreshingBlock: { 
             self.page += 1
             self.loadSpecialData()
         })
-        return tv
+        return cv
     }()
     
     
@@ -42,40 +45,36 @@ class SpecialView: UICollectionViewCell,UITableViewDelegate, UITableViewDataSour
         SpecialModel.requestSpecialData(self.page) { (array, error) in
             if error == nil {
                 self.dataArray.addObjectsFromArray(array!)
-                self.tableView.footer.endRefreshing()
-                self.tableView.reloadData()
+                self.collectionView.footer.endRefreshing()
+                self.collectionView.reloadData()
             }
             HDManager.stopLoading()
         }
     }
     
-    //MARK:---tableview 的协议方法
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    //MARK:---collectionview的协议方法
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataArray.count
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("SpecialViewCell", forIndexPath: indexPath) as! SpecialViewCell
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("SpeciallCell", forIndexPath: indexPath) as! SpeciallCell
         let model = dataArray[indexPath.row] as! SpecialModel
         cell.backImage.sd_setImageWithURL(NSURL.init(string: model.cover_img_new))
-        cell.ditailLabel.text = model.topic_name
+        cell.detailLabel.text = model.topic_name
+        
         return cell
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 200
-    }
-    
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.1
-    }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let sdvc = ShopDetailViewController()
         sdvc.hidesBottomBarWhenPushed = true
         let model = dataArray[indexPath.row] as! SpecialModel
         sdvc.model = model
         self.delegate?.pushToViewController(sdvc)
         
+    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSizeMake(SCREEN_W, 200)
     }
 }

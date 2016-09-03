@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC1AF5A21D78488F0075A624 /* SpeciallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1AF5A01D78488F0075A624 /* SpeciallCell.swift */; };
+		BC1AF5A31D78488F0075A624 /* SpeciallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1AF5A11D78488F0075A624 /* SpeciallCell.xib */; };
 		BC264E5B1D6457350089D31F /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC264E5A1D6457350089D31F /* ShopDetailViewController.swift */; };
 		BC264E5E1D6462C00089D31F /* GoodsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC264E5C1D6462C00089D31F /* GoodsDetailViewController.swift */; };
 		BC264E5F1D6462C00089D31F /* GoodsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC264E5D1D6462C00089D31F /* GoodsDetailViewController.xib */; };
@@ -165,8 +167,6 @@
 		BC5F9CC61D5C755900F93735 /* TwoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC5F9CC41D5C755900F93735 /* TwoViewCell.xib */; };
 		BC5F9CC91D5C756C00F93735 /* ThreeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F9CC71D5C756C00F93735 /* ThreeViewCell.swift */; };
 		BC5F9CCA1D5C756C00F93735 /* ThreeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC5F9CC81D5C756C00F93735 /* ThreeViewCell.xib */; };
-		BC5F9CCD1D5CA50A00F93735 /* SpecialViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F9CCB1D5CA50A00F93735 /* SpecialViewCell.swift */; };
-		BC5F9CCE1D5CA50A00F93735 /* SpecialViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC5F9CCC1D5CA50A00F93735 /* SpecialViewCell.xib */; };
 		BC5F9D0D1D5DCBC100F93735 /* MagazineModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F9D0C1D5DCBC100F93735 /* MagazineModels.swift */; };
 		BC5F9D0F1D5DCCC400F93735 /* ManagerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F9D0E1D5DCCC400F93735 /* ManagerNetwork.swift */; };
 		BC5F9D131D5EC9DC00F93735 /* MagazineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F9D111D5EC9DC00F93735 /* MagazineCell.swift */; };
@@ -188,6 +188,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC1AF5A01D78488F0075A624 /* SpeciallCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciallCell.swift; sourceTree = "<group>"; };
+		BC1AF5A11D78488F0075A624 /* SpeciallCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeciallCell.xib; sourceTree = "<group>"; };
 		BC264E5A1D6457350089D31F /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		BC264E5C1D6462C00089D31F /* GoodsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsDetailViewController.swift; sourceTree = "<group>"; };
 		BC264E5D1D6462C00089D31F /* GoodsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsDetailViewController.xib; sourceTree = "<group>"; };
@@ -431,8 +433,6 @@
 		BC5F9CC41D5C755900F93735 /* TwoViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoViewCell.xib; sourceTree = "<group>"; };
 		BC5F9CC71D5C756C00F93735 /* ThreeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeViewCell.swift; sourceTree = "<group>"; };
 		BC5F9CC81D5C756C00F93735 /* ThreeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreeViewCell.xib; sourceTree = "<group>"; };
-		BC5F9CCB1D5CA50A00F93735 /* SpecialViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialViewCell.swift; sourceTree = "<group>"; };
-		BC5F9CCC1D5CA50A00F93735 /* SpecialViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecialViewCell.xib; sourceTree = "<group>"; };
 		BC5F9D0C1D5DCBC100F93735 /* MagazineModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagazineModels.swift; sourceTree = "<group>"; };
 		BC5F9D0E1D5DCCC400F93735 /* ManagerNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerNetwork.swift; sourceTree = "<group>"; };
 		BC5F9D111D5EC9DC00F93735 /* MagazineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagazineCell.swift; sourceTree = "<group>"; };
@@ -1055,10 +1055,10 @@
 				BC5F9CC41D5C755900F93735 /* TwoViewCell.xib */,
 				BC5F9CC71D5C756C00F93735 /* ThreeViewCell.swift */,
 				BC5F9CC81D5C756C00F93735 /* ThreeViewCell.xib */,
-				BC5F9CCB1D5CA50A00F93735 /* SpecialViewCell.swift */,
-				BC5F9CCC1D5CA50A00F93735 /* SpecialViewCell.xib */,
 				BC3EF3701D65D54300C6632E /* BrandListCell.swift */,
 				BC3EF3711D65D54300C6632E /* BrandListCell.xib */,
+				BC1AF5A01D78488F0075A624 /* SpeciallCell.swift */,
+				BC1AF5A11D78488F0075A624 /* SpeciallCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1151,7 +1151,7 @@
 				TargetAttributes = {
 					BC4F9BC91D586C6200D16E68 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 352U83VDYQ;
+						DevelopmentTeam = 5C3P5K8BHL;
 					};
 				};
 			};
@@ -1183,8 +1183,8 @@
 				BC4F9C381D58AABD00D16E68 /* 杂志@3x.png in Resources */,
 				BC5F9CBB1D5C4EE200F93735 /* 导航箭头.png in Resources */,
 				BC4F9C3C1D58AABD00D16E68 /* 达人selected.png in Resources */,
-				BC5F9CCE1D5CA50A00F93735 /* SpecialViewCell.xib in Resources */,
 				BC4F9BD81D586C6200D16E68 /* LaunchScreen.storyboard in Resources */,
+				BC1AF5A31D78488F0075A624 /* SpeciallCell.xib in Resources */,
 				BC3EF36F1D65B4A900C6632E /* BrandListViewController.xib in Resources */,
 				BC3EF30E1D654B9000C6632E /* UMSCommentDetailController.xib in Resources */,
 				BC4F9C361D58AABD00D16E68 /* 杂志.png in Resources */,
@@ -1269,7 +1269,6 @@
 				BC4F9CD41D58B11D00D16E68 /* JSONAPI.m in Sources */,
 				BCAF78ED1D61B3CF00BA29E5 /* MasterManagerNetwork.swift in Sources */,
 				BC4F9CF71D58B11D00D16E68 /* SDWebImageManager.m in Sources */,
-				BC5F9CCD1D5CA50A00F93735 /* SpecialViewCell.swift in Sources */,
 				BC4F9CEB1D58B11D00D16E68 /* UIScrollView+MJExtension.m in Sources */,
 				BC4F9CF41D58B11D00D16E68 /* SDWebImageDecoder.m in Sources */,
 				BC3EF36B1D65B2C300C6632E /* BrandManagerNetwork.swift in Sources */,
@@ -1317,6 +1316,7 @@
 				BC4F9CDC1D58B11D00D16E68 /* MJRefreshBackFooter.m in Sources */,
 				BC4F9BEF1D58761600D16E68 /* MasterViewController.swift in Sources */,
 				BC47AF1D1D59D961006D67EF /* SpecialView.swift in Sources */,
+				BC1AF5A21D78488F0075A624 /* SpeciallCell.swift in Sources */,
 				BC4F9CD51D58B11D00D16E68 /* JSONHTTPClient.m in Sources */,
 				BC264E5B1D6457350089D31F /* ShopDetailViewController.swift in Sources */,
 				BC47AF191D59D936006D67EF /* BrandView.swift in Sources */,
@@ -1496,7 +1496,7 @@
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.QF.LiangCang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.QF.LiangCangzcy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Common/BridgingHeader.h";
@@ -1527,7 +1527,7 @@
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.QF.LiangCang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.QF.LiangCangzcy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Common/BridgingHeader.h";

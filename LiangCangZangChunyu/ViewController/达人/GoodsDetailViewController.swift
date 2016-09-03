@@ -24,7 +24,7 @@ class GoodsDetailViewController: UIViewController, UMSocialUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadData()
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "分享", style: UIBarButtonItemStyle.Done, target: self, action: #selector(self.shareButton(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "分享", style: UIBarButtonItemStyle.Done, target: self, action: #selector(self.shareButton(_:)))
         self.navigationItem.title = "良品"
         
     }
@@ -40,7 +40,10 @@ class GoodsDetailViewController: UIViewController, UMSocialUIDelegate {
     
         print(urlStr)
         //弹出分享视图
-        UMSocialSnsService.presentSnsIconSheetView(self, appKey: AppKey, shareText: "良仓", shareImage: UIImage.init(named: ""), shareToSnsNames: [UMShareToWechatSession,UMShareToWechatTimeline], delegate: self)
+        UMSocialSnsService.presentSnsIconSheetView(self, appKey: AppKey, shareText: "良仓", shareImage: UIImage.init(named: "bgImage.jpg"), shareToSnsNames: [UMShareToWechatSession,UMShareToWechatTimeline], delegate: self)
+        
+        
+//         UMSocialSnsService.presentSnsIconSheetView(self, appKey: AppKey, shareText: "良仓", shareImage: nil, shareToSnsNames: [UMShareToWechatSession,UMShareToWechatTimeline], delegate: self)
 
         
         
@@ -48,11 +51,11 @@ class GoodsDetailViewController: UIViewController, UMSocialUIDelegate {
     func didFinishGetUMSocialDataInViewController(response: UMSocialResponseEntity!) {
         
         if response.responseCode == UMSResponseCodeSuccess{
-//            print("分享成功")
+            print("分享成功")
         }else if response.responseCode == UMSResponseCodeCancel{
-//            print("用户取消分享")
+            print("用户取消分享")
         }else{
-//            print("分享失败")
+            print("分享失败")
         }
     }
 

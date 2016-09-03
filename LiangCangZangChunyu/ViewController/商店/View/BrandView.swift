@@ -80,6 +80,7 @@ class BrandView: UICollectionViewCell,UITableViewDelegate,UITableViewDataSource 
         let model = self.dataArray[indexPath.row] as! BrandModel
         blvc.brand_name = model.brand_name
         blvc.brand_logo = model.brand_logo
+        blvc.brand_id = model.brand_id
         blvc.hidesBottomBarWhenPushed = true
         self.delegate?.pushToViewController(blvc)
     }

@@ -12,10 +12,10 @@ import Foundation
 
 extension BrandListModel {
     
-    class func requestBrandListData(callBack:(array: [AnyObject]?, error: NSError?)->Void) {
+    class func requestBrandListData(brandID: NSNumber!,callBack:(array: [AnyObject]?, error: NSError?)->Void) {
         //http://mobile.iliangcang.com/brand/brandShopList?a=b&page=1&count=10&brand_id=14&app_key=iPhone&v=3.0.0&sig=13D69254-786A-42F1-B9D2-575BFDD67E7C
         let urlStr = "http://mobile.iliangcang.com/brand/brandShopList"
-        let para = ["a":"b","page":"1","count":"10","brand_id":"14","app_key":"iPhone","v":"3.0.0","sig":"13D69254-786A-42F1-B9D2-575BFDD67E7C"]
+        let para = ["a":"b","page":"1","count":"10","brand_id":String(brandID),"app_key":"iPhone","v":"3.0.0","sig":"13D69254-786A-42F1-B9D2-575BFDD67E7C"]
         BaseRequest.getWithURL(urlStr, para: para) { (data, error) in
             if error == nil {
                 let obj = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary

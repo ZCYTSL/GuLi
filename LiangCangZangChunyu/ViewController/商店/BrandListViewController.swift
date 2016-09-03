@@ -17,6 +17,7 @@ class BrandListViewController: UIViewController, UICollectionViewDelegate, UICol
     var brand_name: String!
     var brand_logo: String!
     var brand_desc: String!
+    var brand_id: NSNumber!
     var oneView: UIView!
     var dataArray = NSMutableArray()
     var brandLabel: UILabel!
@@ -42,14 +43,11 @@ class BrandListViewController: UIViewController, UICollectionViewDelegate, UICol
         iconImage.layer.masksToBounds = true
         oneView = UIView.init(frame: CGRectMake(10, 314, SCREEN_W - 20, SCREEN_H - 414))
         self.view.addSubview(oneView)
-
-        
-        
-
+   
     }
-
+    //MARK:----获取数据
     func loadData() -> Void {
-        BrandListModel.requestBrandListData { (array, error) in
+        BrandListModel.requestBrandListData(self.brand_id){ (array, error) in
             if error == nil {
                 self.dataArray.addObjectsFromArray(array!)
                 self.collectionView.reloadData()
@@ -57,21 +55,12 @@ class BrandListViewController: UIViewController, UICollectionViewDelegate, UICol
         }
     }
     
-//    @IBAction func creatSegment(sender: UISegmentedControl) {
-//        if sender.selectedSegmentIndex == 0 {
-//            self.view.bringSubviewToFront(collectionView)
-//        } else {
-//            self.view.bringSubviewToFront(oneView)
-//        }
-//        
-//    }
-    
     //MARK:--- collectionView 的协议方法
-    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataArray.count
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("BrandListCell", forIndexPath: indexPath) as! BrandListCell
         let model = dataArray[indexPath.item] as! BrandListModel
         cell.iconImge.sd_setImageWithURL(NSURL.init(string: model.goods_image))
@@ -87,5 +76,4 @@ class BrandListViewController: UIViewController, UICollectionViewDelegate, UICol
         return CGSizeMake(ww, hh)
     }
     
-
 }

@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setUpShare(options: [NSObject: AnyObject]?) -> Void {
         
         UMSocialData.setAppKey(AppKey)
-        UMSocialWechatHandler.setWXAppId(wechatAppID, appSecret: wechatAppSecret, url: nil)
+        UMSocialWechatHandler.setWXAppId(wechatAppID, appSecret: wechatAppSecret, url: "http://www.baidu.com")
         
         
     }
