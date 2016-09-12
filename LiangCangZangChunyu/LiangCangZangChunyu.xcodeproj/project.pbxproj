@@ -183,9 +183,87 @@
 		BCAF78FE1D61F22200BA29E5 /* MasterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCAF78FC1D61F22200BA29E5 /* MasterDetailViewController.xib */; };
 		BCAF79001D62BCE600BA29E5 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF78FF1D62BCE600BA29E5 /* DetailModel.swift */; };
 		BCAF79021D62BDB800BA29E5 /* DetailManagerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF79011D62BDB800BA29E5 /* DetailManagerNetwork.swift */; };
+		BCC147BD1D7EDF4D00EA664C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC147BB1D7EDF4D00EA664C /* ProductViewController.swift */; };
+		BCC147BE1D7EDF4D00EA664C /* ProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC147BC1D7EDF4D00EA664C /* ProductViewController.xib */; };
+		BCC147DE1D82B4FE00EA664C /* HeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC147DD1D82B4FE00EA664C /* HeadView.swift */; };
+		BCC148631D83F1ED00EA664C /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC148561D83F1B500EA664C /* SnapKit.framework */; };
+		BCC148651D83F67800EA664C /* CommenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC148641D83F67800EA664C /* CommenCell.swift */; };
+		BCC1486B1D86320300EA664C /* SnapKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BCC148561D83F1B500EA664C /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BCD6507C1D66D0DB00C4F336 /* bgImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BCD6507B1D66D0DB00C4F336 /* bgImage.jpg */; };
 		BCD6507E1D66E1E600C4F336 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD6507D1D66E1E600C4F336 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCC148551D83F1B500EA664C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCC1484B1D83F1B400EA664C /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9D819CC627D0083B827;
+			remoteInfo = "SnapKit iOS";
+		};
+		BCC148571D83F1B500EA664C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCC1484B1D83F1B400EA664C /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 537DCE921C35CC8800B5B899;
+			remoteInfo = "SnapKit tvOS";
+		};
+		BCC148591D83F1B500EA664C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCC1484B1D83F1B400EA664C /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EECDB37A1AC0C9D4006BBC11;
+			remoteInfo = "SnapKit OSX";
+		};
+		BCC1485B1D83F1B500EA664C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCC1484B1D83F1B400EA664C /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9E219CC627E0083B827;
+			remoteInfo = "SnapKit iOS Tests";
+		};
+		BCC1485D1D83F1B500EA664C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCC1484B1D83F1B400EA664C /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 537DCEAF1C35D90A00B5B899;
+			remoteInfo = "SnapKit tvOS Tests";
+		};
+		BCC1485F1D83F1B500EA664C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCC1484B1D83F1B400EA664C /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EECDB3841AC0C9D4006BBC11;
+			remoteInfo = "SnapKit OSX Tests";
+		};
+		BCC148611D83F1B500EA664C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCC1484B1D83F1B400EA664C /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 56A0DC091C859E30005973AB;
+			remoteInfo = "Example-iOS";
+		};
+		BCC148681D86316D00EA664C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCC1484B1D83F1B400EA664C /* SnapKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EEBCC9D719CC627D0083B827;
+			remoteInfo = "SnapKit iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BCC1486A1D86318800EA664C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BCC1486B1D86320300EA664C /* SnapKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BC1AF5A01D78488F0075A624 /* SpeciallCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciallCell.swift; sourceTree = "<group>"; };
@@ -449,6 +527,11 @@
 		BCAF78FC1D61F22200BA29E5 /* MasterDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterDetailViewController.xib; sourceTree = "<group>"; };
 		BCAF78FF1D62BCE600BA29E5 /* DetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		BCAF79011D62BDB800BA29E5 /* DetailManagerNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailManagerNetwork.swift; sourceTree = "<group>"; };
+		BCC147BB1D7EDF4D00EA664C /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		BCC147BC1D7EDF4D00EA664C /* ProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductViewController.xib; sourceTree = "<group>"; };
+		BCC147DD1D82B4FE00EA664C /* HeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadView.swift; sourceTree = "<group>"; };
+		BCC1484B1D83F1B400EA664C /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = "../../SnapKit-develop/SnapKit.xcodeproj"; sourceTree = "<group>"; };
+		BCC148641D83F67800EA664C /* CommenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommenCell.swift; sourceTree = "<group>"; };
 		BCD6507B1D66D0DB00C4F336 /* bgImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgImage.jpg; sourceTree = "<group>"; };
 		BCD6507D1D66E1E600C4F336 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -458,6 +541,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCC148631D83F1ED00EA664C /* SnapKit.framework in Frameworks */,
 				BCD6507E1D66E1E600C4F336 /* MessageUI.framework in Frameworks */,
 				BC3EF3621D6565F000C6632E /* ImageIO.framework in Frameworks */,
 				BC3EF35F1D6563F000C6632E /* libz.tbd in Frameworks */,
@@ -648,6 +732,7 @@
 		BC4F9BC11D586C6200D16E68 = {
 			isa = PBXGroup;
 			children = (
+				BCC1484B1D83F1B400EA664C /* SnapKit.xcodeproj */,
 				BC3EF3601D6563F800C6632E /* frameworks */,
 				BC3EF2CD1D654B9000C6632E /* UMSocial_Sdk_5.2.1 */,
 				BC3EF2E81D654B9000C6632E /* UMSocial_Sdk_Extra_Frameworks */,
@@ -748,6 +833,8 @@
 				BC264E5A1D6457350089D31F /* ShopDetailViewController.swift */,
 				BC3EF36C1D65B4A900C6632E /* BrandListViewController.swift */,
 				BC3EF36D1D65B4A900C6632E /* BrandListViewController.xib */,
+				BCC147BB1D7EDF4D00EA664C /* ProductViewController.swift */,
+				BCC147BC1D7EDF4D00EA664C /* ProductViewController.xib */,
 			);
 			path = "商店";
 			sourceTree = "<group>";
@@ -1104,6 +1191,7 @@
 			isa = PBXGroup;
 			children = (
 				BCAF78EE1D61C55700BA29E5 /* Cell */,
+				BCC147DD1D82B4FE00EA664C /* HeadView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1115,8 +1203,23 @@
 				BCAF78F01D61C57400BA29E5 /* MasterCell.xib */,
 				BCAF78F31D61E32500BA29E5 /* MyCell.swift */,
 				BCAF78F41D61E32500BA29E5 /* MyCell.xib */,
+				BCC148641D83F67800EA664C /* CommenCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		BCC1484C1D83F1B400EA664C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCC148561D83F1B500EA664C /* SnapKit.framework */,
+				BCC148581D83F1B500EA664C /* SnapKit.framework */,
+				BCC1485A1D83F1B500EA664C /* SnapKit.framework */,
+				BCC1485C1D83F1B500EA664C /* SnapKit iOS Tests.xctest */,
+				BCC1485E1D83F1B500EA664C /* SnapKit tvOS Tests.xctest */,
+				BCC148601D83F1B500EA664C /* SnapKit OSX Tests.xctest */,
+				BCC148621D83F1B500EA664C /* Example-iOS.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1129,10 +1232,12 @@
 				BC4F9BC61D586C6200D16E68 /* Sources */,
 				BC4F9BC71D586C6200D16E68 /* Frameworks */,
 				BC4F9BC81D586C6200D16E68 /* Resources */,
+				BCC1486A1D86318800EA664C /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BCC148691D86316D00EA664C /* PBXTargetDependency */,
 			);
 			name = LiangCangZangChunyu;
 			productName = LiangCangZangChunyu;
@@ -1167,12 +1272,70 @@
 			mainGroup = BC4F9BC11D586C6200D16E68;
 			productRefGroup = BC4F9BCB1D586C6200D16E68 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BCC1484C1D83F1B400EA664C /* Products */;
+					ProjectRef = BCC1484B1D83F1B400EA664C /* SnapKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BC4F9BC91D586C6200D16E68 /* LiangCangZangChunyu */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BCC148561D83F1B500EA664C /* SnapKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SnapKit.framework;
+			remoteRef = BCC148551D83F1B500EA664C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BCC148581D83F1B500EA664C /* SnapKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SnapKit.framework;
+			remoteRef = BCC148571D83F1B500EA664C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BCC1485A1D83F1B500EA664C /* SnapKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SnapKit.framework;
+			remoteRef = BCC148591D83F1B500EA664C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BCC1485C1D83F1B500EA664C /* SnapKit iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SnapKit iOS Tests.xctest";
+			remoteRef = BCC1485B1D83F1B500EA664C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BCC1485E1D83F1B500EA664C /* SnapKit tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SnapKit tvOS Tests.xctest";
+			remoteRef = BCC1485D1D83F1B500EA664C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BCC148601D83F1B500EA664C /* SnapKit OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SnapKit OSX Tests.xctest";
+			remoteRef = BCC1485F1D83F1B500EA664C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BCC148621D83F1B500EA664C /* Example-iOS.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Example-iOS.app";
+			remoteRef = BCC148611D83F1B500EA664C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BC4F9BC81D586C6200D16E68 /* Resources */ = {
@@ -1199,6 +1362,7 @@
 				BC264E5F1D6462C00089D31F /* GoodsDetailViewController.xib in Resources */,
 				BC5F9CBC1D5C4EE200F93735 /* 返回按钮.png in Resources */,
 				BC4F9C3E1D58AABD00D16E68 /* 达人selected@3x.png in Resources */,
+				BCC147BE1D7EDF4D00EA664C /* ProductViewController.xib in Resources */,
 				BC47AF2F1D59F3AD006D67EF /* leftselected.png in Resources */,
 				BC4F9C351D58AABD00D16E68 /* 杂志selected@3x.png in Resources */,
 				BC47AF521D59F5A2006D67EF /* 达人@2x.png in Resources */,
@@ -1272,6 +1436,7 @@
 				BC4F9CEB1D58B11D00D16E68 /* UIScrollView+MJExtension.m in Sources */,
 				BC4F9CF41D58B11D00D16E68 /* SDWebImageDecoder.m in Sources */,
 				BC3EF36B1D65B2C300C6632E /* BrandManagerNetwork.swift in Sources */,
+				BCC147DE1D82B4FE00EA664C /* HeadView.swift in Sources */,
 				BC4F9CE21D58B11D00D16E68 /* MJRefreshAutoStateFooter.m in Sources */,
 				BC4F9CFC1D58B11D00D16E68 /* UIImage+WebP.m in Sources */,
 				BC4F9CF01D58B11D00D16E68 /* MKAnnotationView+WebCache.m in Sources */,
@@ -1282,6 +1447,7 @@
 				BC4F9CDB1D58B11D00D16E68 /* MJRefreshAutoFooter.m in Sources */,
 				BC4F9CDF1D58B11D00D16E68 /* MJRefreshHeader.m in Sources */,
 				BC4F9CF51D58B11D00D16E68 /* SDWebImageDownloader.m in Sources */,
+				BCC147BD1D7EDF4D00EA664C /* ProductViewController.swift in Sources */,
 				BC4F9CE01D58B11D00D16E68 /* MJRefreshAutoGifFooter.m in Sources */,
 				BC4F9CD11D58B11D00D16E68 /* JSONModelClassProperty.m in Sources */,
 				BC5F9D0D1D5DCBC100F93735 /* MagazineModels.swift in Sources */,
@@ -1289,6 +1455,7 @@
 				BC4F9CFD1D58B11D00D16E68 /* UIImageView+HighlightedWebCache.m in Sources */,
 				BC4F9CF11D58B11D00D16E68 /* NSData+ImageContentType.m in Sources */,
 				BC4F9CDA1D58B11D00D16E68 /* MBProgressHUD.m in Sources */,
+				BCC148651D83F67800EA664C /* CommenCell.swift in Sources */,
 				BCAF78EB1D61AA6D00BA29E5 /* MasterModel.swift in Sources */,
 				BC4F9CD61D58B11D00D16E68 /* JSONModel+networking.m in Sources */,
 				BC4F9BEB1D5875F000D16E68 /* ShopViewController.swift in Sources */,
@@ -1354,6 +1521,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCC148691D86316D00EA664C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SnapKit iOS";
+			targetProxy = BCC148681D86316D00EA664C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BC3EF2CE1D654B9000C6632E /* UMSocialLocalizable.strings */ = {
@@ -1496,6 +1671,7 @@
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.QF.LiangCangzcy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1527,6 +1703,7 @@
 					"$(PROJECT_DIR)/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.QF.LiangCangzcy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

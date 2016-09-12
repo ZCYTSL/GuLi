@@ -203,7 +203,7 @@ class MasterDetailViewController: UIViewController,UICollectionViewDelegate,UICo
             gdvc.hidesBottomBarWhenPushed = true
             let model = dataArray[indexPath.item] as! RecommendedModel
             gdvc.goodId = model.goods_id
-//            print(model.goods_id)
+            print(model.goods_id)
             self.navigationController?.pushViewController(gdvc, animated: true)
         }
     }

@@ -75,5 +75,13 @@ class BrandListViewController: UIViewController, UICollectionViewDelegate, UICol
         let hh = ww * 1.2
         return CGSizeMake(ww, hh)
     }
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let pvc = ProductViewController()
+        let model = dataArray[indexPath.item] as! BrandListModel
+        pvc.navigationController?.navigationBarHidden = true
+        pvc.goodID = model.goods_id
+        pvc.model = model
+        self.navigationController?.pushViewController(pvc, animated: true)
+    }
     
 }

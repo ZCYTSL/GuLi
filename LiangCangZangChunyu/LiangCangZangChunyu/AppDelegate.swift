@@ -37,10 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         
         let result = UMSocialSnsService.handleOpenURL(url)
-        if result{
+        if result {
             print("处理成功")
-        }else
-        {
+        }else {
             print("处理失败")
         }
         return true

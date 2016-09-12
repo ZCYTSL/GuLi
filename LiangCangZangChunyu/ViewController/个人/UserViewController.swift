@@ -8,8 +8,9 @@
 
 import UIKit
 import MessageUI
+import CoreLocation
 
-class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MFMailComposeViewControllerDelegate {
+class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MFMailComposeViewControllerDelegate,UMSocialUIDelegate {
     
     var dataArray = ["意见反馈","清除缓存","评论"]
     
@@ -54,7 +55,7 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    
+        
         if indexPath.row == 0 {
             if MFMailComposeViewController.canSendMail() {
                 // 注意这个实例要写在 if block 里，否则无法发送邮件时会出现两次提示弹窗（一次是系统的）

@@ -33,6 +33,10 @@ class infoModel: JSONModel {
     var brand_id: String!
     var brand_logo: String!
     var brand_name: String!
-
-    
 }
+
+
+
+
+
+

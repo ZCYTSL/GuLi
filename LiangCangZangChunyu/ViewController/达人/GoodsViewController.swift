@@ -14,6 +14,7 @@ class GoodsViewController: UIViewController,UIWebViewDelegate {
     var urlStr: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.whiteColor()
         self.creatWebView()
         
     }

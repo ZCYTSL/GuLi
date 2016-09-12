@@ -98,19 +98,25 @@ class GoodsModel: JSONModel{
 }
 
 class CommentModel: JSONModel {
-    var comment_id: NSNumber!
-    var create_time: String!
-    var goods_id: NSNumber!
-    var is_daren: String!
+    var commentId: NSNumber!
+    var createTime: String!
+    var goodsId: NSNumber!
+    var isDaren: String!
     var msg: String!
-    var parent_id: NSNumber!
-    var parent_uid: String!
-    var parent_user_image: String!
-    var parent_user_name: String!
-    var user_id: NSNumber!
-    var user_image: String!
-    var user_name: String!
-
+    var parentId: NSNumber!
+//    var parentUid: String!
+    var parentUserImage: String!
+    var parentUserName: String!
+    var userId: NSNumber!
+    var userImage: String!
+    var userName: String!
+    
+    override class func keyMapper()->JSONKeyMapper{
+        return JSONKeyMapper.mapperFromUnderscoreCaseToCamelCase()
+    }
+    override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+        
+    }
     
 }
 

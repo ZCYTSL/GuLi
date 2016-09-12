@@ -8,7 +8,13 @@
 
 import UIKit
 import CoreLocation
-class GoodsDetailViewController: UIViewController, UMSocialUIDelegate {
+
+protocol GoodsDetailDelegate: class {
+    func pushToViewController()->Void
+    
+}
+
+class GoodsDetailViewController: UIViewController,UMSocialUIDelegate,UITableViewDelegate,UITableViewDataSource,GoodsDetailDelegate {
 
     var goodId = ""
     var page :NSInteger = 1
@@ -17,37 +23,48 @@ class GoodsDetailViewController: UIViewController, UMSocialUIDelegate {
     var imageUrl: String!
     var priceUrl: String!
     
-    @IBOutlet weak var backImage: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
+    var commentArray = NSMutableArray()
+    lazy var tableView:UITableView = {
+        let tv = UITableView.init(frame: CGRectMake(0, 64, SCREEN_W, SCREEN_H - 64), style: UITableViewStyle.Plain)
+        tv.backgroundColor = UIColor.blackColor()
+        tv.rowHeight = UITableViewAutomaticDimension
+        tv.estimatedRowHeight = 400
+        self.view.addSubview(tv)
+        tv.delegate = self
+        tv.dataSource = self
+        tv.tableHeaderView = self.headView
+        tv.separatorStyle = .None
+        tv.registerClass(CommenCell.self, forCellReuseIdentifier: "CommenCell")
+        return tv
+    }()
+    
+    lazy var headView:HeadView = {
+        let hv = HeadView.init(frame: CGRectMake(0, 0, SCREEN_W, 400))
+        hv.delegate = self
+//        hv.sss = self.urlStr
+        return hv
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.blackColor()
         self.loadData()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "分享", style: UIBarButtonItemStyle.Done, target: self, action: #selector(self.shareButton(_:)))
         self.navigationItem.title = "良品"
         
     }
     
+    //分享到微信和QQ
     func shareButton(button: UIButton) -> Void {
-        //分享到微信好友
+
         UMSocialData.defaultData().extConfig.wechatSessionData.url = self.urlStr
         UMSocialData.defaultData().extConfig.wechatSessionData.title = self.nameStr
-        
-        // 分享到微信朋友圈
         UMSocialData.defaultData().extConfig.wechatTimelineData.title = self.nameStr
         UMSocialData.defaultData().extConfig.wechatTimelineData.url = self.urlStr
-    
-        print(urlStr)
-        //弹出分享视图
         UMSocialSnsService.presentSnsIconSheetView(self, appKey: AppKey, shareText: "良仓", shareImage: UIImage.init(named: "bgImage.jpg"), shareToSnsNames: [UMShareToWechatSession,UMShareToWechatTimeline], delegate: self)
-        
-        
-//         UMSocialSnsService.presentSnsIconSheetView(self, appKey: AppKey, shareText: "良仓", shareImage: nil, shareToSnsNames: [UMShareToWechatSession,UMShareToWechatTimeline], delegate: self)
-
-        
-        
     }
+    
+    //分享的回调
     func didFinishGetUMSocialDataInViewController(response: UMSocialResponseEntity!) {
         
         if response.responseCode == UMSResponseCodeSuccess{
@@ -58,8 +75,8 @@ class GoodsDetailViewController: UIViewController, UMSocialUIDelegate {
             print("分享失败")
         }
     }
-
     
+    //获取数据
     func loadData() -> Void {
         HDManager.startLoading()
         GoodsModel.requestGoodsData(self.goodId) { (s1, s2, s3, s4, error) in
@@ -69,21 +86,41 @@ class GoodsDetailViewController: UIViewController, UMSocialUIDelegate {
                 self.imageUrl = s3
                 self.priceUrl = s4
                 
-                self.backImage.sd_setImageWithURL(NSURL.init(string: self.imageUrl))
-                self.nameLabel.text = self.nameStr
-                self.priceLabel.text = "￥" + self.priceUrl
+                self.headView.backImage.sd_setImageWithURL(NSURL.init(string: self.imageUrl))
+                self.headView.nameLabel.text = self.nameStr
+                self.headView.priceLabel.text = "￥" + self.priceUrl
+                self.tableView.reloadData()
             }
             HDManager.stopLoading()
         }
-        
+        CommentModel.requestData(self.page, goodsId: self.goodId) { (array, error) in
+            if error == nil {
+                self.commentArray.addObjectsFromArray(array!)
+                self.tableView.reloadData()
+            }
+        }
     }
-    @IBAction func webButton(sender: UIButton) {
-        let gvc = GoodsViewController()
-        gvc.hidesBottomBarWhenPushed = true
-        gvc.urlStr = urlStr
-        self.navigationController?.pushViewController(gvc, animated: true)
+    
+    //MARK:---tableview的协议方法
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return commentArray.count
     }
-
-
-
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("CommenCell", forIndexPath: indexPath) as! CommenCell
+        cell.backgroundColor = UIColor.blackColor()
+        cell.selectionStyle = .None
+        let model = self.commentArray[indexPath.row] as! CommentModel
+        cell.iconImage.sd_setImageWithURL(NSURL.init(string: model.userImage))
+        cell.nameLabel.text = model.userName + ":"
+        cell.detailLabel.text = model.msg
+        cell.timeLabel.text = model.createTime
+        return cell
+    }
+    
+    //MARK:---GoodsDetailDelegate协议方法
+    func pushToViewController() {
+       let vc = GoodsViewController()
+        vc.urlStr = self.urlStr
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

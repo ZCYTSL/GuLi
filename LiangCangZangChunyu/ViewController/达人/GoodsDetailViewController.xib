@@ -7,9 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GoodsDetailViewController" customModule="LiangCangZangChunyu" customModuleProvider="target">
             <connections>
-                <outlet property="backImage" destination="el5-B0-Bln" id="YOZ-bU-EE7"/>
-                <outlet property="nameLabel" destination="k8o-Kf-YUu" id="dNr-yB-5LN"/>
-                <outlet property="priceLabel" destination="FQ0-Zn-NMF" id="Hfo-v0-2fn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,62 +14,8 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="el5-B0-Bln">
-                    <rect key="frame" x="40" y="98" width="520" height="300"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="300" id="VAz-06-SEW"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8o-Kf-YUu">
-                    <rect key="frame" x="10" y="408" width="580" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="Z3U-s0-7Qa"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ0-Zn-NMF">
-                    <rect key="frame" x="10" y="443" width="580" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="vjS-6X-LO0"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0th-ET-k0r">
-                    <rect key="frame" x="10" y="483" width="50" height="30"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="8xC-NG-Rwj"/>
-                        <constraint firstAttribute="width" constant="50" id="fe9-rI-CN9"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <size key="titleShadowOffset" width="1" height="0.0"/>
-                    <state key="normal" title="LINK">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="webButton:" destination="-1" eventType="touchUpInside" id="si8-iX-8k5"/>
-                    </connections>
-                </button>
-            </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="0th-ET-k0r" firstAttribute="top" secondItem="FQ0-Zn-NMF" secondAttribute="bottom" constant="10" id="3R6-FL-A8a"/>
-                <constraint firstItem="el5-B0-Bln" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="98" id="6Si-Vf-meM"/>
-                <constraint firstAttribute="trailing" secondItem="el5-B0-Bln" secondAttribute="trailing" constant="40" id="AvR-w5-zMs"/>
-                <constraint firstItem="k8o-Kf-YUu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="CDU-xu-eCF"/>
-                <constraint firstItem="k8o-Kf-YUu" firstAttribute="top" secondItem="el5-B0-Bln" secondAttribute="bottom" constant="10" id="H27-XL-bap"/>
-                <constraint firstItem="FQ0-Zn-NMF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="HQS-rt-giX"/>
-                <constraint firstItem="FQ0-Zn-NMF" firstAttribute="top" secondItem="k8o-Kf-YUu" secondAttribute="bottom" constant="5" id="YVj-n3-lbV"/>
-                <constraint firstItem="el5-B0-Bln" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="a6I-0O-1G5"/>
-                <constraint firstAttribute="trailing" secondItem="FQ0-Zn-NMF" secondAttribute="trailing" constant="10" id="etE-WA-xpw"/>
-                <constraint firstItem="0th-ET-k0r" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="jGg-hd-qBe"/>
-                <constraint firstAttribute="trailing" secondItem="k8o-Kf-YUu" secondAttribute="trailing" constant="10" id="n2o-0j-U9l"/>
-            </constraints>
+            <point key="canvasLocation" x="602" y="311"/>
         </view>
     </objects>
 </document>

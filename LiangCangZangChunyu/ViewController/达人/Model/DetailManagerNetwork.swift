@@ -110,6 +110,8 @@ extension DetailsModel {
     }
     
 }
+
+//推荐书籍展示页
 extension GoodsModel{
     
     class func requestGoodsData(goodsId: String,callBack:(s1: String?,s2: String?,s3:String?,s4:String?, error: NSError?)->Void) {
@@ -136,6 +138,8 @@ extension GoodsModel{
         }
     }
 }
+
+//评论数据
 extension CommentModel {
     class func requestData(page: NSInteger!,goodsId: String!,callBack:(array: [AnyObject]?,error: NSError?)->Void) {
         //http://mobile.iliangcang.com/comments/goods?a=b&page=1&count=10&goods_id=245068&app_key=iPhone&v=3.0.0&sig=13D69254-786A-42F1-B9D2-575BFDD67E7C&user_token=3d8310797a27fa7fe1fad310d12da37b
