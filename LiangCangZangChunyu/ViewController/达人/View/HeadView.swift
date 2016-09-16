@@ -8,9 +8,14 @@
 
 import UIKit
 
+
+protocol HeadViewDelegate: class {
+    func pushToViewController()->Void
+    func click()->Void
+}
 class HeadView: UIView {
     
-    weak var delegate: GoodsDetailDelegate?
+    weak var delegate: HeadViewDelegate?
     var backImage:UIImageView!
     var nameLabel:UILabel!
     var priceLabel:UILabel!
@@ -58,6 +63,7 @@ class HeadView: UIView {
     }
     
     func collecButton(button:UIButton) {
+        self.delegate?.click()
         collectBtn.setTitle("已收藏", forState: UIControlState.Normal)
         collectBtn.userInteractionEnabled = false
         print("已收藏")

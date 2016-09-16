@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import JSONModel
 
 class MagazineModel: JSONModel {
     var access_url: String!

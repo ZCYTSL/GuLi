@@ -8,13 +8,15 @@
 
 import UIKit
 import CoreLocation
+import SDWebImage
 
-protocol GoodsDetailDelegate: class {
-    func pushToViewController()->Void
+
+protocol GoodsDetailViewControllerDelegate:NSObjectProtocol {
+    func addModel(model:RecommendedModel)->Void
     
 }
 
-class GoodsDetailViewController: UIViewController,UMSocialUIDelegate,UITableViewDelegate,UITableViewDataSource,GoodsDetailDelegate {
+class GoodsDetailViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,HeadViewDelegate {
 
     var goodId = ""
     var page :NSInteger = 1
@@ -22,6 +24,9 @@ class GoodsDetailViewController: UIViewController,UMSocialUIDelegate,UITableView
     var urlStr: String!
     var imageUrl: String!
     var priceUrl: String!
+    var uid:Int?
+    var model:RecommendedModel?
+    weak var delegate:GoodsDetailViewControllerDelegate?
     
     var commentArray = NSMutableArray()
     lazy var tableView:UITableView = {
@@ -41,7 +46,6 @@ class GoodsDetailViewController: UIViewController,UMSocialUIDelegate,UITableView
     lazy var headView:HeadView = {
         let hv = HeadView.init(frame: CGRectMake(0, 0, SCREEN_W, 400))
         hv.delegate = self
-//        hv.sss = self.urlStr
         return hv
     }()
     
@@ -53,7 +57,10 @@ class GoodsDetailViewController: UIViewController,UMSocialUIDelegate,UITableView
         self.navigationItem.title = "良品"
         
     }
+    func shareButton(button: UIButton) -> Void {
+    }
     
+    /*
     //分享到微信和QQ
     func shareButton(button: UIButton) -> Void {
 
@@ -75,6 +82,7 @@ class GoodsDetailViewController: UIViewController,UMSocialUIDelegate,UITableView
             print("分享失败")
         }
     }
+    */
     
     //获取数据
     func loadData() -> Void {
@@ -123,4 +131,20 @@ class GoodsDetailViewController: UIViewController,UMSocialUIDelegate,UITableView
         vc.urlStr = self.urlStr
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func click() {
+        if model == nil {
+            model = RecommendedModel()
+        }
+        
+        if delegate == nil {
+            DataManager.defaultManager.updateWith(model!, uid: uid!)
+        } else {
+            DataManager.defaultManager.insertWith(model!)
+        }
+        self.delegate?.addModel(model!)
+        print(model)
+    }
+    
+    
 }

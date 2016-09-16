@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import JSONModel
 
 class MasteModel: JSONModel {
     

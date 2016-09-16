@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class MasterViewController: UIViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource {
     
@@ -24,12 +25,12 @@ class MasterViewController: UIViewController,UICollectionViewDelegateFlowLayout,
         cv.showsVerticalScrollIndicator = false
         self.view.addSubview(cv)
         cv.registerNib(UINib.init(nibName: "MyCell", bundle: nil), forCellWithReuseIdentifier: "MyCell")
-        cv.header = MJRefreshNormalHeader.init(refreshingBlock: {
+        cv.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
             self.page = 1
             self.loadMasterData()
         })
         
-        cv.footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+        cv.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
             self.page += 1
             self.loadMasterData()
         })
@@ -61,8 +62,8 @@ class MasterViewController: UIViewController,UICollectionViewDelegateFlowLayout,
             }
             HDManager.stopLoading()
         }
-        self.collectionView.header.endRefreshing()
-        self.collectionView.footer.endRefreshing()
+        self.collectionView.mj_header.endRefreshing()
+        self.collectionView.mj_footer.endRefreshing()
     }
     
     //MARK:----collectonview 的协议方法

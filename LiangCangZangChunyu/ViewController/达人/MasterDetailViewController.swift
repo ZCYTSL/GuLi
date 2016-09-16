@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class MasterDetailViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
@@ -33,11 +34,11 @@ class MasterDetailViewController: UIViewController,UICollectionViewDelegate,UICo
         cv.delegate = self
         cv.dataSource = self
         self.view.addSubview(cv)
-        cv.header = MJRefreshNormalHeader.init(refreshingBlock: {
+        cv.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
             self.page = 1
             self.loadData()
         })
-        cv.footer = MJRefreshAutoNormalFooter.init(refreshingBlock: { 
+        cv.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
             self.page += 1
             self.loadData()
         })
@@ -51,11 +52,11 @@ class MasterDetailViewController: UIViewController,UICollectionViewDelegate,UICo
         cv.delegate = self
         cv.dataSource = self
         self.view.addSubview(cv)
-        cv.header = MJRefreshNormalHeader.init(refreshingBlock: {
+        cv.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
             self.page = 1
             self.loadData()
         })
-        cv.footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+        cv.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
             self.page += 1
             self.loadData()
         })
@@ -69,11 +70,11 @@ class MasterDetailViewController: UIViewController,UICollectionViewDelegate,UICo
         cv.delegate = self
         cv.dataSource = self
         self.view.addSubview(cv)
-        cv.header = MJRefreshNormalHeader.init(refreshingBlock: {
+        cv.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
             self.page = 1
             self.loadData()
         })
-        cv.footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+        cv.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
             self.page += 1
             self.loadData()
         })
@@ -127,12 +128,12 @@ class MasterDetailViewController: UIViewController,UICollectionViewDelegate,UICo
             }
             HDManager.stopLoading()
         }
-        self.cv2.header.endRefreshing()
-        self.cv3.header.endRefreshing()
-        self.cv1.header.endRefreshing()
-        self.cv2.footer.endRefreshing()
-        self.cv3.footer.endRefreshing()
-        self.cv1.footer.endRefreshing()
+        self.cv2.mj_header.endRefreshing()
+        self.cv3.mj_header.endRefreshing()
+        self.cv1.mj_header.endRefreshing()
+        self.cv2.mj_footer.endRefreshing()
+        self.cv3.mj_footer.endRefreshing()
+        self.cv1.mj_footer.endRefreshing()
     }
 
     @IBAction func changeButton(sender: UISegmentedControl) {
@@ -203,7 +204,8 @@ class MasterDetailViewController: UIViewController,UICollectionViewDelegate,UICo
             gdvc.hidesBottomBarWhenPushed = true
             let model = dataArray[indexPath.item] as! RecommendedModel
             gdvc.goodId = model.goods_id
-            print(model.goods_id)
+            gdvc.model = model
+//            print(model.goods_id)
             self.navigationController?.pushViewController(gdvc, animated: true)
         }
     }

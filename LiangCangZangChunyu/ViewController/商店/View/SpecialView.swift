@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import MJRefresh
+
 
 /**商店-专题*/
 class SpecialView: UICollectionViewCell,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
@@ -23,7 +25,7 @@ class SpecialView: UICollectionViewCell,UICollectionViewDelegate,UICollectionVie
         cv.dataSource = self
         cv.registerNib(UINib.init(nibName: "SpeciallCell", bundle: nil), forCellWithReuseIdentifier: "SpeciallCell")
         self.contentView.addSubview(cv)
-        cv.footer = MJRefreshAutoNormalFooter.init(refreshingBlock: { 
+        cv.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
             self.page += 1
             self.loadSpecialData()
         })
@@ -45,7 +47,7 @@ class SpecialView: UICollectionViewCell,UICollectionViewDelegate,UICollectionVie
         SpecialModel.requestSpecialData(self.page) { (array, error) in
             if error == nil {
                 self.dataArray.addObjectsFromArray(array!)
-                self.collectionView.footer.endRefreshing()
+                self.collectionView.mj_footer.endRefreshing()
                 self.collectionView.reloadData()
             }
             HDManager.stopLoading()

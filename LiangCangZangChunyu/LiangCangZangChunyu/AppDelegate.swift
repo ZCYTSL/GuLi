@@ -23,27 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let htbVC = HomeTabBarViewController()
         window?.rootViewController = htbVC
         window?.makeKeyAndVisible()
-        self.setUpShare(launchOptions)
         return true
     }
-    
-    func setUpShare(options: [NSObject: AnyObject]?) -> Void {
-        
-        UMSocialData.setAppKey(AppKey)
-        UMSocialWechatHandler.setWXAppId(wechatAppID, appSecret: wechatAppSecret, url: "http://www.baidu.com")
-        
-        
-    }
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        
-        let result = UMSocialSnsService.handleOpenURL(url)
-        if result {
-            print("处理成功")
-        }else {
-            print("处理失败")
-        }
-        return true
-    }
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

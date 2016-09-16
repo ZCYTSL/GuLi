@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SDWebImage
 
 /**商店-首页*/
 class HomeView: UICollectionViewCell, UITableViewDelegate, UITableViewDataSource  {

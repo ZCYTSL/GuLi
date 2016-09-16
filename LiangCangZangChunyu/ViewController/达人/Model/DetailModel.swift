@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import JSONModel
 
 class RecommendedModel: JSONModel {
     

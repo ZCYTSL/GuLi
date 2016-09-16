@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MJRefresh
 
 /**商店-品牌*/
 class BrandView: UICollectionViewCell,UITableViewDelegate,UITableViewDataSource {
@@ -22,11 +23,11 @@ class BrandView: UICollectionViewCell,UITableViewDelegate,UITableViewDataSource 
         tv.bounces = false
         tv.separatorInset = UIEdgeInsetsZero
         tv.registerNib(UINib.init(nibName: "BrandViewCell", bundle: nil), forCellReuseIdentifier: "BrandViewCell")
-        tv.header = RefeshHeader.init(refreshingBlock: {
+        tv.mj_header = RefeshHeader.init(refreshingBlock: {
             self.page = 1
             self.loadBrandData()
         })
-        tv.footer = MJRefreshAutoNormalFooter.init(refreshingBlock: { 
+        tv.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
             self.page += 1
             self.loadBrandData()
         })
@@ -49,8 +50,8 @@ class BrandView: UICollectionViewCell,UITableViewDelegate,UITableViewDataSource 
                 }
                 self.dataArray.addObjectsFromArray(array!)
                 self.tableView.reloadData()
-                self.tableView.footer.endRefreshing()
-                self.tableView.header.endRefreshing()
+                self.tableView.mj_footer.endRefreshing()
+                self.tableView.mj_header.endRefreshing()
             }
             HDManager.stopLoading()
         }

@@ -12,19 +12,35 @@ import UIKit
 protocol ShopDelegate: class {
     func pushToViewController(vc: UIViewController)->Void
 }
-class ShopViewController: UIViewController, ShopTitleViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,ShopDelegate {
+class ShopViewController: UIViewController, ShopTitleViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,ShopDelegate,UISearchResultsUpdating {
     
     var titleView: ShopTitleView!
     var collectionView: UICollectionView!
+    var searchController: UISearchController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationItem.title = "商店"
         self.automaticallyAdjustsScrollViewInsets = false
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "left"), style: UIBarButtonItemStyle.Done, target: self, action: #selector(self.searchWith))
+        
+        searchController = UISearchController.init(searchResultsController: nil)
+        searchController?.hidesNavigationBarDuringPresentation = true
+        searchController?.hidesBottomBarWhenPushed = true
+        searchController?.searchResultsUpdater = self
+        searchController?.dimsBackgroundDuringPresentation = true
+        searchController?.searchBar.searchBarStyle = .Prominent
+        searchController?.searchBar.sizeToFit()
         
         self.creatCollectionView()
         self.creatTitleView()
         titleView.setIndex(1)
+        
+    }
+    func searchWith() {
+        self.presentViewController(searchController!, animated: true, completion: nil)
+        self.becomeFirstResponder()
         
     }
     
@@ -96,6 +112,11 @@ class ShopViewController: UIViewController, ShopTitleViewDelegate, UICollectionV
     func pushToViewController(vc: UIViewController) {
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    //MARK:---搜索框的协议方法
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
     }
 }
 

@@ -82,6 +82,7 @@ class CommenCell: UITableViewCell {
             make.top.equalTo(self)
             make.leading.equalTo(self)
         }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

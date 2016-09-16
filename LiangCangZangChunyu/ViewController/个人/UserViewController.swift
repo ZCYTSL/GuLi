@@ -10,12 +10,13 @@ import UIKit
 import MessageUI
 import CoreLocation
 
-class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MFMailComposeViewControllerDelegate,UMSocialUIDelegate {
+
+class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MFMailComposeViewControllerDelegate {
     
-    var dataArray = ["意见反馈","清除缓存","评论"]
+    var dataArray = ["我的收藏","意见反馈","清除缓存","评论"]
     
     lazy var tableview: UITableView = {
-        let tv = UITableView.init(frame: CGRectMake(10, 94, SCREEN_W - 20, 240), style: UITableViewStyle.Plain)
+        let tv = UITableView.init(frame: CGRectMake(10, 94, SCREEN_W - 20, 320), style: UITableViewStyle.Plain)
         tv.delegate = self
         tv.dataSource = self
         self.view.addSubview(tv)
@@ -55,8 +56,12 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         if indexPath.row == 0 {
+            let cvc = CollectViewController()
+            cvc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(cvc, animated: true)
+            
+        }else if indexPath.row == 1 {
             if MFMailComposeViewController.canSendMail() {
                 // 注意这个实例要写在 if block 里，否则无法发送邮件时会出现两次提示弹窗（一次是系统的）
                 let mailComposeViewController = configuredMailComposeViewController()
@@ -65,9 +70,9 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 self.showSendMailErrorAlert()
             }
 
-        } else if indexPath.row == 1 {
-            self.clear()
         } else if indexPath.row == 2 {
+            self.clear()
+        } else if indexPath.row == 3 {
             let url = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=\(LiangCangZangChunyu.appid)"
             UIApplication.sharedApplication().openURL(NSURL.init(string: url)!)
         }

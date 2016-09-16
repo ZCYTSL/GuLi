@@ -15,9 +15,12 @@ class GoodsViewController: UIViewController,UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
+        
         self.creatWebView()
         
     }
+    
+   
     func creatWebView() -> Void {
    
         webView = UIWebView.init(frame: self.view.bounds)
