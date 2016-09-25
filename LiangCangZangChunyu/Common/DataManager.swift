@@ -22,7 +22,7 @@ class DataManager: NSObject {
             print("open error")
             return
         }
-        let createSql = "create table if not exists userInfo(id integer primary key autoincrement, name varchar(256))"
+        let createSql = "create table if not exists collect(id integer primary key autoincrement, name text, price text, image text)"
         do {
             try fmdb.executeUpdate(createSql, values: nil)
         } catch {
@@ -31,19 +31,19 @@ class DataManager: NSObject {
     }
     
     func insertWith(model: RecommendedModel) -> Void {
-        let insertSql = "insert into userInfo(name) values(?)"
+        let insertSql = "insert into collect(name, price, image) values(?, ?, ?)"
         do {
-            try fmdb.executeUpdate(insertSql, values: [model.goods_name!])
+            try fmdb.executeUpdate(insertSql, values: [model.goods_name!,model.price!,model.goods_image!])
         } catch {
             print(fmdb.lastErrorMessage())
         }
     }
     
     func updateWith(model: RecommendedModel, uid: Int) -> Void {
-        let updateSql = "update userInfo set name = ?, where id = ?"
+        let updateSql = "update collect set name = ?, price = ?, image = ? where id = ?"
         
         do {
-            try fmdb.executeUpdate(updateSql, values: [model.goods_name!,uid])
+            try fmdb.executeUpdate(updateSql, values: [model.goods_name!,model.price!,model.goods_image,uid])
         } catch {
             print(fmdb.lastErrorMessage())
             
@@ -53,17 +53,28 @@ class DataManager: NSObject {
     func selectAll() -> [RecommendedModel] {
         
         var tmpArr = [RecommendedModel]()
-        let selectSql = "select * from userInfo"
+        let selectSql = "select * from collect"
         do {
             let rs = try fmdb.executeQuery(selectSql, values: nil)
             while rs.next() {
                 let model = RecommendedModel()
+                model.goods_name = rs.stringForColumn("name")
+                model.price = rs.stringForColumn("price")
+                model.goods_image = rs.stringForColumn("image")
                 tmpArr.append(model)
             }
         } catch {
             print(fmdb.lastErrorMessage())
         }
         return tmpArr
+    }
+    func remove(model:RecommendedModel) {
+        let removcSql = "remove from collect where id = ?"
+        do {
+            try fmdb.executeUpdate(removcSql, values: nil)
+        } catch {
+            print(fmdb.lastErrorMessage())
+        }
     }
 
 }

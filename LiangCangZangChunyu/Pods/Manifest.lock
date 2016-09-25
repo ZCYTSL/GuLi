@@ -1,4 +1,14 @@
 PODS:
+  - AMap3DMap (4.2.1):
+    - AMapFoundation (~> 1.2)
+  - AMapFoundation (1.2.0)
+  - AMapLocation (2.1.1):
+    - AMapFoundation (~> 1.2)
+  - AMapNavi (2.2.1):
+    - AMap3DMap (~> 4.2)
+    - AMapFoundation (~> 1.2)
+  - AMapSearch (4.2.0):
+    - AMapFoundation (~> 1.0)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
@@ -17,6 +27,10 @@ PODS:
   - SnapKit (0.21.1)
 
 DEPENDENCIES:
+  - AMap3DMap
+  - AMapLocation
+  - AMapNavi
+  - AMapSearch
   - FMDB
   - JSONModel
   - MBProgressHUD
@@ -29,6 +43,11 @@ DEPENDENCIES:
   - SnapKit
 
 SPEC CHECKSUMS:
+  AMap3DMap: 0a5237cdc228f49818763ce9707c997870c5eb01
+  AMapFoundation: 8acc2bf4eed79aab4d21002ddb8b24a6f3f3621c
+  AMapLocation: dd203f76b034ef5cb546600f4e1ffad2a3a14072
+  AMapNavi: 9c4d741ce39b98fe255fd57b51452d7d9de5e263
+  AMapSearch: 788020fca7ed18819e8bc2bfca716a6775a05ada
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   JSONModel: 81c06ecf99190a25fa6aafceea5faffa7880868a
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -38,6 +57,6 @@ SPEC CHECKSUMS:
   ShareSDK3: df89140111729eae7a2bf06688372af969322a37
   SnapKit: bbad04cb016c7cead63965f16b00c09318d271ee
 
-PODFILE CHECKSUM: 21b6b6eaa4add6c82559efec85e32e7df01c5603
+PODFILE CHECKSUM: 871a00af18590cf55fcb5c16933ea738041b70a2
 
 COCOAPODS: 1.0.1

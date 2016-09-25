@@ -23,7 +23,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let htbVC = HomeTabBarViewController()
         window?.rootViewController = htbVC
         window?.makeKeyAndVisible()
+//        return true
+        
+        //初始化SDK、初始化三方平台,SDK和三方平台的SDK建立一个连接，需要的时候就触发
+        ShareSDK.registerApp(AppKey, activePlatforms: [SSDKPlatformType.TypeWechat.rawValue], onImport: { (platformType) in
+            switch platformType {
+            case SSDKPlatformType.TypeWechat:
+                ShareSDKConnector.connectWeChat(WXApi.classForCoder())
+            default:
+                break
+            }
+        }) { (platformType, appInfo) in
+            switch platformType {
+            case SSDKPlatformType.TypeWechat:
+                appInfo.SSDKSetupWeChatByAppId(wechatAppID, appSecret: wechatAppSecret)
+            default:
+                break
+            }
+        }
         return true
+
     }
 
 

@@ -13,12 +13,13 @@ import CoreLocation
 
 class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MFMailComposeViewControllerDelegate {
     
-    var dataArray = ["我的收藏","意见反馈","清除缓存","评论"]
+    var dataArray = ["我的收藏","意见反馈","清除缓存","评论","地图工具","扫一扫"]
     
     lazy var tableview: UITableView = {
-        let tv = UITableView.init(frame: CGRectMake(10, 94, SCREEN_W - 20, 320), style: UITableViewStyle.Plain)
+        let tv = UITableView.init(frame: CGRectMake(10, 94, SCREEN_W - 20, 480), style: UITableViewStyle.Plain)
         tv.delegate = self
         tv.dataSource = self
+        tv.separatorStyle = .None
         self.view.addSubview(tv)
         return tv
     }()
@@ -28,7 +29,12 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.automaticallyAdjustsScrollViewInsets = false
         self.view.backgroundColor = UIColor.init(patternImage: UIImage.init(named: "bgImage.jpg")!)
         self.navigationItem.title = "个人设置"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "更多设置", style: UIBarButtonItemStyle.Done, target: self, action: #selector(self.moreSetting))
         self.tableview.reloadData()
+    }
+    
+    func moreSetting(){
+        
     }
     
     //MARK:----tableview的协议方法
@@ -75,7 +81,14 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         } else if indexPath.row == 3 {
             let url = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=\(LiangCangZangChunyu.appid)"
             UIApplication.sharedApplication().openURL(NSURL.init(string: url)!)
+        } else if indexPath.row == 4 {
+            let mvc = MapViewController()
+            mvc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(mvc, animated: true)
+        } else if indexPath.row == 5 {
+            self.weixinStyle()
         }
+        
     }
     
     func clear() -> Void {
@@ -151,4 +164,28 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    //二维码扫描
+    func weixinStyle(){
+        //设置扫码区域参数
+        var style = LBXScanViewStyle()
+        style.centerUpOffset = 44;
+        style.photoframeAngleStyle = LBXScanViewPhotoframeAngleStyle.Inner;
+        style.photoframeLineW = 2;
+        style.photoframeAngleW = 18;
+        style.photoframeAngleH = 18;
+        style.isNeedShowRetangle = false;
+        
+        style.anmiationStyle = LBXScanViewAnimationStyle.LineMove;
+        
+        style.colorAngle = UIColor(red: 0.0/255, green: 200.0/255.0, blue: 20.0/255.0, alpha: 1.0)
+        
+        
+        style.animationImage = UIImage(named: "CodeScan.bundle/qrcode_Scan_weixin_Line")
+        
+        
+        let vc = LBXScanViewController();
+        vc.scanStyle = style
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
 }

@@ -10,12 +10,6 @@ import UIKit
 import CoreLocation
 import SDWebImage
 
-
-protocol GoodsDetailViewControllerDelegate:NSObjectProtocol {
-    func addModel(model:RecommendedModel)->Void
-    
-}
-
 class GoodsDetailViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,HeadViewDelegate {
 
     var goodId = ""
@@ -24,9 +18,9 @@ class GoodsDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     var urlStr: String!
     var imageUrl: String!
     var priceUrl: String!
-    var uid:Int?
-    var model:RecommendedModel?
-    weak var delegate:GoodsDetailViewControllerDelegate?
+    var uid: Int?
+    var model:RecommendedModel!
+    var isCollect:Bool!
     
     var commentArray = NSMutableArray()
     lazy var tableView:UITableView = {
@@ -58,31 +52,24 @@ class GoodsDetailViewController: UIViewController,UITableViewDelegate,UITableVie
         
     }
     func shareButton(button: UIButton) -> Void {
-    }
-    
-    /*
-    //分享到微信和QQ
-    func shareButton(button: UIButton) -> Void {
-
-        UMSocialData.defaultData().extConfig.wechatSessionData.url = self.urlStr
-        UMSocialData.defaultData().extConfig.wechatSessionData.title = self.nameStr
-        UMSocialData.defaultData().extConfig.wechatTimelineData.title = self.nameStr
-        UMSocialData.defaultData().extConfig.wechatTimelineData.url = self.urlStr
-        UMSocialSnsService.presentSnsIconSheetView(self, appKey: AppKey, shareText: "良仓", shareImage: UIImage.init(named: "bgImage.jpg"), shareToSnsNames: [UMShareToWechatSession,UMShareToWechatTimeline], delegate: self)
-    }
-    
-    //分享的回调
-    func didFinishGetUMSocialDataInViewController(response: UMSocialResponseEntity!) {
+        var shareParames = NSMutableDictionary()
+        shareParames.SSDKSetupShareParamsByText("分享内容", images: UIImage.init(named: "1.jpg"), url: NSURL.init(string: "https://www.baidu.com"), title: "分享标题", type: SSDKContentType.Auto)
         
-        if response.responseCode == UMSResponseCodeSuccess{
-            print("分享成功")
-        }else if response.responseCode == UMSResponseCodeCancel{
-            print("用户取消分享")
-        }else{
-            print("分享失败")
+        ShareSDK.showShareActionSheet(view, items: [SSDKPlatformType.TypeWechat.rawValue], shareParams: shareParames) { (state, platformType, userdata, contentEnity, error, end) in
+            switch state {
+            case SSDKResponseState.Success:
+                print("分享成功")
+            case SSDKResponseState.Fail:
+                print("分享失败")
+            case SSDKResponseState.Cancel:
+                print("取消分享")
+            default:
+                break
+            }
         }
+
+        
     }
-    */
     
     //获取数据
     func loadData() -> Void {
@@ -133,17 +120,17 @@ class GoodsDetailViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     func click() {
+
         if model == nil {
             model = RecommendedModel()
         }
-        
-        if delegate == nil {
-            DataManager.defaultManager.updateWith(model!, uid: uid!)
+        let Arr = DataManager.defaultManager.selectAll()
+        if Arr.contains(model) {
+            DataManager.defaultManager.remove(model!)
+            DataManager.defaultManager.insertWith(model!)
         } else {
             DataManager.defaultManager.insertWith(model!)
         }
-        self.delegate?.addModel(model!)
-        print(model)
     }
     
     

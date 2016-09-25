@@ -1,6 +1,31 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## AMap3DMap
+
+Copyright © 2014 AutoNavi. All Rights Reserved.
+
+
+## AMapFoundation
+
+Copyright © 2014 AutoNavi. All Rights Reserved.
+
+
+## AMapLocation
+
+Copyright © 2014 AutoNavi. All Rights Reserved.
+
+
+## AMapNavi
+
+Copyright © 2014 AutoNavi. All Rights Reserved.
+
+
+## AMapSearch
+
+Copyright © 2014 AutoNavi. All Rights Reserved.
+
+
 ## FMDB
 
 If you are using FMDB in your project, I'd love to hear about it.  Let Gus know

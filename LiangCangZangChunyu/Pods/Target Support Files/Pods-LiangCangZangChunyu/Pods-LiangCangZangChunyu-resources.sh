@@ -80,10 +80,14 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "AMap3DMap/MAMapKit.framework/AMap.bundle"
+  install_resource "AMapNavi/AMapNaviKit.framework/AMapNavi.bundle"
   install_resource "ShareSDK3/ShareSDK/Support/Required/ShareSDK.bundle"
   install_resource "ShareSDK3/ShareSDK/Support/Optional/ShareSDKUI.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "AMap3DMap/MAMapKit.framework/AMap.bundle"
+  install_resource "AMapNavi/AMapNaviKit.framework/AMapNavi.bundle"
   install_resource "ShareSDK3/ShareSDK/Support/Required/ShareSDK.bundle"
   install_resource "ShareSDK3/ShareSDK/Support/Optional/ShareSDKUI.bundle"
 fi
